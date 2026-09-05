@@ -25,7 +25,6 @@ Thumbs.db
 *.sln
 
 # npm/yarn
-package-lock.json
 .pnpm-debug.log
 .yarn-debug.log*
 .yarn-error.log*
