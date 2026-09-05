@@ -1,6 +1,6 @@
 {
-  "name": "mador",
-  "version": "1.0.0",
+  "name": "@marsbos/mador",
+  "version": "1.0.1",
   "description": "Make Any DOM Reactive",
   "author": {
     "name": "Marcel Bos"
