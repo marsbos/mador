@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 : <<'END_USAGE'
 ./release.sh patch "fix: fix message here"
