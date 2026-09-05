@@ -2,7 +2,8 @@ name: Publish to npm
 
 on:
   release:
-    types: [published] # Dit zorgt dat hij automatisch pusht zodra jij een Release aanmaakt op GitHub
+    types: [published]
+    workflow_dispatch
 
 jobs:
   publish:
