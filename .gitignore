@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Env files
+.env
+.env.*.local
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# npm/yarn
+package-lock.json
+.pnpm-debug.log
+.yarn-debug.log*
+.yarn-error.log*
+
+# Coverage (if using testing tools)
+coverage/
+
+# Optional:
+RELEASE.md
