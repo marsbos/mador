@@ -35,7 +35,7 @@
     "prebuild": "npm run clean",
     "build": "node build.mjs",
     "watch": "terser src/mador.js -o dist/mador.min.js --compress --mangle --watch",
-    "format": "prettier --write \"src/**/*.{js,ts,html}\" \"tests/**/*.{js,ts,html}\" \"examples/**/*.{js,ts,html}\"",
+    "format": "prettier --write \"src/**/*.{js,ts,html}\"  \"examples/**/*.{js,ts,html}\"",
     "format:check": "prettier --check .",
     "test": "vitest run"
   },

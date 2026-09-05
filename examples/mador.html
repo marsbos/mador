@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>mador.js</title>
-
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="p-8 bg-gray-50 text-gray-900">
@@ -14,14 +13,13 @@
       import mador from "../dist/mador.js";
       const [r, w] = mador({
         count: 1,
-        user: { details: { name: "Santje" } },
+        user: { details: { name: "John" } },
       });
 
       r(
         ".counter",
         (el, count) => {
           el.textContent = `Count: ${count}`;
-          el.hidden = count < 7;
         },
         (state) => state.count,
       );
@@ -35,10 +33,11 @@
       r(
         ".user-name",
         (el, [user, count]) => {
-          el.textContent = user.details.name;
+          el.textContent = `${user.details.name} - count=${count}`;
         },
         (state) => [state.user, state.count],
       );
+
       document.querySelector("#incrBtn").addEventListener("click", () => {
         w((state) => {
           state.count++;
@@ -52,11 +51,22 @@
         });
       }, 4000);
     </script>
-    <main class="flex gap-2 max-w-4xl mx-auto justify-center">
-      <h2 class="user-name"></h2>
-      <div class="counter"></div>
-      <div class="counter-double"></div>
-      <button id="incrBtn">Increment</button>
+    <main
+      class="flex flex-col sm:flex-row items-center justify-center gap-6 max-w-xl mx-auto p-8 bg-slate-900 text-slate-100 rounded-2xl shadow-2xl border border-slate-800"
+    >
+      <div class="flex flex-col gap-1 text-center sm:text-left">
+        <h2 class="user-name text-xl font-bold tracking-tight text-white"></h2>
+        <div class="flex items-center gap-4 text-sm text-slate-400">
+          <span class="counter"></span>
+          <span class="counter-double"></span>
+        </div>
+      </div>
+      <button
+        id="incrBtn"
+        class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm rounded-xl shadow-lg shadow-indigo-600/30 transition-all duration-200 cursor-pointer"
+      >
+        Increment
+      </button>
     </main>
   </body>
 </html>
