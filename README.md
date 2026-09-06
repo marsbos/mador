@@ -12,7 +12,7 @@ It gives you reactive state and a way to bind that state to existing DOM.
 Mador is a native ES module and can be used through npm or directly from a CDN.
 
 ```js
-import mador from "https://cdn.jsdelivr.net/npm/mador/+esm";
+import mador from "https://cdn.jsdelivr.net/npm/@marsbos/mador@latest/dist/mador.js";
 
 const [r, w] = mador({
   count: 1,
