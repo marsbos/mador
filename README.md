@@ -14,11 +14,11 @@ Mador is a native ES module and can be used through npm or directly from a CDN.
 ```js
 import mador from "https://cdn.jsdelivr.net/npm/@marsbos/mador@latest/dist/mador.js";
 
-const [r, w] = mador({
+const [read, write] = mador({
   count: 1,
 });
 
-r(
+read(
   ".counter",
   (el, count) => {
     el.textContent = `Count: ${count}`;
@@ -26,7 +26,7 @@ r(
   (state) => state.count,
 );
 
-r(
+read(
   ".another-counter",
   (el, count) => {
     el.textContent = count * 3;
@@ -34,7 +34,7 @@ r(
   (state) => state.count,
 );
 
-w((state) => {
+write((state) => {
   state.count++;
 });
 ```
@@ -49,7 +49,7 @@ Mador works with the DOM you already have.
 A binding consists of three things:
 
 ```js
-r(selector, update, read);
+read(selector, update, read);
 ```
 
 `selector` selects the elements to update.
@@ -59,7 +59,7 @@ r(selector, update, read);
 `read` selects the state the binding depends on.
 
 ```js
-r(
+read(
   ".counter",
   (el, count) => {
     el.textContent = count * 2;
@@ -75,7 +75,7 @@ Mador tracks the properties read by the binding and only reruns it when those de
 State is changed through `w`:
 
 ```js
-w((state) => {
+write((state) => {
   state.count++;
 });
 ```
